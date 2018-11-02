@@ -7,6 +7,8 @@ Um es einfacher zu machen unsere CI-Tools in unsere Repositories einzubinden gib
 
 ## phpcs
 
+## php-cs-fixer
+
 ## phpmd
 
 ## phpstan
