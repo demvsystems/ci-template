@@ -1,0 +1,21 @@
+matrix:
+  include:
+    - language: php
+      php: 7.1.11
+      install:
+        ### Composer
+        - composer self-update
+        - composer install --prefer-dist --optimize-autoloader --no-scripts
+        #- curl -LS http://get.sensiolabs.de/deptrac.phar -o deptrac.phar
+      script:
+        - composer coverage
+        #- composer deptrac
+        #- composer phpstan
+        #- composer cs-check
+      cache:
+        directories:
+          - $HOME/.composer/cache/files
+      after_success:
+        - bash <(curl -s https://codecov.io/bash) -t **PROJECTS_CODECOV_KEY**
+notifications:
+  email: false

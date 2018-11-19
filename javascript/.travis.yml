@@ -1,0 +1,14 @@
+matrix:
+  include:
+    - language: node_js
+      node_js: 8
+      script:
+        - yarn production
+        - yarn lint
+        - yarn test
+      cache:
+        yarn: true
+        directories:
+          - node_modules
+notifications:
+  email: false
